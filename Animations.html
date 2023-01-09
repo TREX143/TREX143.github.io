@@ -125,6 +125,17 @@
 	height:100px;
 	display:inline-block;
 	transition:1s;
+	animation-name: dance;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	}
+
+	@keyframes dance
+	{
+		0% { transform:rotate }
+		50%{ transform:rotate(-45deg); }
+
+		100%{ transform:rotate(45deg); }
 	}
 
 	#square10:hover{

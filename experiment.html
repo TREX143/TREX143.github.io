@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		#snoo{
+			width: 100px;
+			height: 100px;
+			background-image:url(https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/20221016mfsteelerssports40-1665961376.jpg);
+			background-size:contain;
+			background-repeat:no-repeat;
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="snoo"></div>
+
+	<script type="text/javascript">
+	
+		let name = "Teddy"
+
+		console.log("hey," name ". You're in the console")
+
+		document.addEventListener(
+			"mousemove", function(event){
+				console.log(event.clientX, event.clientY)
+
+				snoo.style.left = event.clientX + - 250 + "px";
+				snoo.style.top = event.clientY + - 250 + "px";
+			}
+			)
+	</script>
+</body>
+</html>

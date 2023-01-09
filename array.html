@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		
+		#square{
+			width: 1000px;
+			height: 1000px;
+		}
+
+		p{
+			font-size: 50px;
+		}
+
+	</style>
+</head>
+<body>
+
+<div id="square"></div>
+
+
+	<center>
+		<p>Hi! Please choose what breakfast you want this Sunday morning:
+		</p>
+	</center>
+
+<script type="text/javascript">
+	
+	var breakfast = ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"]
+
+	document.addEventListener("click", function(){
+		var number = Math.round(Math.random()*7)
+		console.log(number)
+		square.style.backgroundImage = "url(./newFolder/" + breakfast[number]")";
+	})
+
+</script>
+
+</body>
+</html>
