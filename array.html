@@ -10,6 +10,10 @@
 		#square{
 			width: 1000px;
 			height: 1000px;
+			border: 1px solid black;
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 
 		p{
@@ -20,7 +24,7 @@
 </head>
 <body>
 
-<div id="square"></div>
+<center><div id="square"></div></center>
 
 
 	<center>
@@ -35,7 +39,7 @@
 	document.addEventListener("click", function(){
 		var number = Math.round(Math.random()*7)
 		console.log(number)
-		square.style.backgroundImage = "url(./newFolder/" + breakfast[number]")";
+		square.style.backgroundImage = "url(./newFolder/" + breakfast[number]+")";
 	})
 
 </script>
