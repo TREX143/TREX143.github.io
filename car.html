@@ -7,19 +7,32 @@
 		
 
 		#buggy{
-			width:100px;
-			height:100px;
-			background-image:url(car.png);
+			width:200px;
+			height:200px;
+			background-image:url(car1.png);
 			left:10px;
+			top: 75%;
 			position:absolute;
 			background-size: contain;
 			background-repeat: no-repeat;
+			z-index: 9999;
 		}
+
+		#road{
+			width: 99%;
+			height: 99%;
+			background-image: url(road.png);
+			position: absolute;
+			background-size: contain;
+/*			background-repeat: no-repeat;
+*/		}
 	</style>
 </head>
 <body>
 
 	<div id="buggy"></div>
+
+	<div id="road"></div>
 
 	<script type="text/javascript">
 		buggy.style.left = "0px";
@@ -28,14 +41,21 @@
 
 		document.addEventListener("keydown", function(event){
 
+			if (event.keyCode == 39){
+				buggy.style.backgroundImage = "url(car1.png)";
+				x = x+30;
+			buggy.style.left = x + "px";
+			}
 
-			if (){}
+			if (event.keyCode == 37){
+				buggy.style.backgroundImage = "url(car2.png)";
+				x = x-30;
+			buggy.style.left = x + "px";
 
-				else
-			console.log(x)
-			x = x+10;
+			}
 
-			buggy.style.left = x +"px";
+				
+			
 
 		})
 
