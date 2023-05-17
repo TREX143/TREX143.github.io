@@ -7,38 +7,86 @@
 
 <style type="text/css">
 	
-	#circle{
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		height: 200px;
-		width: 200px;
-		background-color: black;
-		border-radius: 50%;
-	}
+  .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #000;
+        position: absolute;
+    }
 
-</style>
+/*    body{
+		overflow-x: hidden;
+    	overflow-y: hidden;
+    }*/
+
+</style>	
 
 </head>
 <body>
-
-	<div id="cursor"></div>
-
 <script type="text/javascript">
-	document.addEventListener("mousemove", function (event){
-		circle.style.left = event.clientX-100 + "px"
-		circle.style.top = event.clientY-100 + "px"
-})
+	function getRandomColor(){
+		  const letters = "0123456789ABCDEF";
+		  let color = "#";
+		  for (let i = 0; i < 6; i++) {
+		    color += letters[Math.floor(Math.random() * 16)];
+		  }
+		  return color;
+		}
 
-	function changeColor(){
-		r = (Math.floor(Math.random()*255))
-		g = (Math.floor(Math.random()*255))
-		b = (Math.floor(Math.random()*255))
+		document.addEventListener("mousemove", function(event){
+	    	var circles = document.getElementsByClassName("circle");
+	    	var mouseX = event.clientX; 
+	      var mouseY = event.clientY; 
+	      console.log(mouseX, mouseY);
+	    	for(var i = 0; i < 20; i++){
+	                var circle = circles[i];
+	                circle.style.left = mouseX + (Math.floor(Math.random()*100))-75+"px"; // this sets the left position of the circle to follow mouse X's position
+	                circle.style.top = mouseY + (Math.floor(Math.random()*100))-75+"px"; // this sets the top position of the circle to follow mouse Y's position
+	            }
+
+	            /*thus this makes it so the dot moves randomly in the range of numbers between 0 and 150 - use of math functions floor and random*/
+
+	    })
+
+
+		function createCircle(){
+			var numCircles = 20; // number of circles to create
+	        var container = document.body; // container element to append circles
+	        var colors = ["#ff4633", "#ff8D33", "#fffC33", "#61ff33", "#121ff0", "#58139e", "#f151ca"]; /*these are hex codes of colors I wanted to include - ex: #ff4633 is a shade of red*/
+
+	        // array of colors for circles
+
+	        for (var i = 0; i < numCircles; i++) {
+	            const circle = document.createElement("div");
+	            circle.className = "circle";
+	            circle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+	            circle.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+	            circle.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+
+	            //move
+	            setInterval(
+	            	function(){
+	            		x = (Math.floor(Math.random()*40))-20;
+						y = (Math.floor(Math.random()*15))-7.5;
+
+						var newX = parseInt(circle.style.left) -x;
+						var newY = parseInt(circle.style.top) -y;
+
+						circle.style.left = newX + "px";
+						circle.style.top = newY + "px";
+	            	}, 300);
+
+	            setInterval(() => {
+				  circle.style.backgroundColor = getRandomColor();
+				}, 200);
+
+	            document.body.appendChild(circle); // append the circle to the container
+
+		}
 	}
 
-
-
-
+	    createCircle()
 </script>
 
 </body>
