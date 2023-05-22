@@ -6,7 +6,7 @@
 	<title></title>
 
 <style type="text/css">
-	
+
   .circle {
         width: 10px;
         height: 10px;
@@ -45,7 +45,7 @@
 	                circle.style.top = mouseY + (Math.floor(Math.random()*100))-75+"px"; // this sets the top position of the circle to follow mouse Y's position
 	            }
 
-	            /*thus this makes it so the dot moves randomly in the range of numbers between 0 and 150 - use of math functions floor and random*/
+	            /*the dot moves randomly in the range of numbers between 0 and 150 - use of math functions floor and random*/
 
 	    })
 
@@ -55,7 +55,7 @@
 	        var container = document.body; // container element to append circles
 	        var colors = ["#ff4633", "#ff8D33", "#fffC33", "#61ff33", "#121ff0", "#58139e", "#f151ca"]; /*these are hex codes of colors I wanted to include - ex: #ff4633 is a shade of red*/
 
-	        // array of colors for circles
+	        // this is an array of colors for circles
 
 	        for (var i = 0; i < numCircles; i++) {
 	            const circle = document.createElement("div");
